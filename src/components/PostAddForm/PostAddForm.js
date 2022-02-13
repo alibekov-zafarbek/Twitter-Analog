@@ -16,8 +16,12 @@ class PostAddForm extends Component {
   }
   onSubmit(e) {
     e.preventDefault()
-    this.props.onAdd(this.state.input)
-    this.setState({input:''})
+    if(this.state.input === ""){
+    } else {
+      this.props.onAdd(this.state.input)
+      this.setState({input:''})
+    }
+
   }
   render() {
     const { input } = this.state
